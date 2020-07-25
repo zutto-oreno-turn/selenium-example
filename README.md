@@ -3,7 +3,7 @@
 ### 概要
 
 - seleniumを使ったe2eテストのためのサンプルです。
-- テストしたいページをブラウザで開き、画面キャプチャを取得するテストコードになります。
+- テストしたいページをブラウザで開き、画面キャプチャを取得するサンプルになります。
 
 #### 対応ブラウザ
 
@@ -16,7 +16,7 @@
 | Windows | Chrome | |
 | Windows | Firefox | |
 | Windows | Chromium Edge | |
-| Windows | Internet Explorer | 動作不安定ですので、PowerShell+COMを使ってe2eテストするのが良いです |
+| Windows | Internet Explorer 11 | WebDriverの動作が不安定ですので、PowerShell+COMを使ってe2eテストします |
 | Android | Chrome | 実機、レミュレータ共に動作します |
 | iPhone | Safari | 実機、シュミレータ共に動作します。但し、iOS13未満は未対応です |
 
@@ -50,7 +50,8 @@ iOS Safari
  - Settings -> Advanced -> Remote Automation ON, Web Inspector ON
  - udidはiphoneをmacに接続し、Xcodeで確認できます。
    - https://qiita.com/takashings/items/f4f96d8f948e14cd98d9
-   - 取得したudidをテストコード内の以下に設定してください。
+   - 取得したudidをテストコードに設定してください。
+   - https://github.com/zutto-oreno-turn/selenium-example/blob/master/test/ios/safari.test.js#L10
 
 ### テスト実行
 ```
@@ -61,9 +62,7 @@ $ npm test test/mac/chrome.test.js
 複数のテストを実行したい場合、ディレクトリを引数として指定して実行する
 $ cd selenium-example
 $ npm test test/mac
-$ npm test test/mac
-$ npm test test/mac
-$ npm test test/mac
+$ npm test test/windows
 ```
 
 Thanks,
