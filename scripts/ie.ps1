@@ -1,7 +1,4 @@
-$out_dir = 'C:\\Users\\koiyamam\\Documents\\GitHub\\regression\\output\\image\\'
-$param_path = 'C:\Users\koiyamam\Documents\GitHub\regression\output\param\' + $param + '.json'
-
-$json = ConvertFrom-Json -InputObject (Get-Content $param_path -Raw)
+Param($id, $path)
 
 # init
 $ie = New-Object -ComObject InternetExplorer.Application
@@ -16,12 +13,17 @@ $dll_info = '[DllImport("user32.dll")] public static extern bool ShowWindowAsync
 Add-Type -MemberDefinition $dll_info -Name NativeMethods -Namespace Win32
 [Win32.NativeMethods]::ShowWindowAsync($ie.HWND, 3) | Out-Null
 
+# window active
+Add-Type -AssemblyName Microsoft.VisualBasic
+$window_process = Get-Process -Name "iexplore" | ? {$_.MainWindowHandle -eq $ie.HWND}
+[Microsoft.VisualBasic.Interaction]::AppActivate($window_process.ID) | Out-Null
+
 # open
-$ie.navigate($json.url)
+$ie.navigate('https://www.yahoo.co.jp/')
 while($ie.busy) {
   Start-Sleep -milliseconds 1000
 }
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 3
 
 # capture
 Add-Type -AssemblyName System.Drawing, System.Windows.Forms
@@ -34,7 +36,7 @@ Start-Sleep -Milliseconds 250
 $bitmap = [Windows.Forms.Clipboard]::GetImage()
 $ep = New-Object Drawing.Imaging.EncoderParameters
 $ep.Param[0] = New-Object Drawing.Imaging.EncoderParameter ([System.Drawing.Imaging.Encoder]::Quality, [long]100)
-$bitmap.Save($out_dir + $param + '-' + $json.now + '.jpg', $jpegCodec, $ep)
+$bitmap.Save('./output/' + $path + '-' + $id + '.jpg', $jpegCodec, $ep)
 
 $ie.Quit()
 $ie = $null

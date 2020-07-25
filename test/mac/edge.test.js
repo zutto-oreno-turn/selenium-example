@@ -7,7 +7,7 @@ beforeAll(() => {
   const options = new edge.Options();
   options.setEdgeChromium(true);
   options.headless();
-  options.windowSize({ width: 768, height: 3500 });
+  options.windowSize({ width: 1200, height: 1200 });
 
   const service = new edge.ServiceBuilder('./drivers/mac/msedgedriver').build();
   driver = edge.Driver.createSession(options, service);

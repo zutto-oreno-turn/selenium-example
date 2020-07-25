@@ -13,7 +13,7 @@ beforeAll(() => {
     .setFirefoxService(new firefox.ServiceBuilder('./drivers/mac/geckodriver'))
     .setFirefoxOptions(options)
     .build();
-  driver.manage().window().setRect({ width: 768, height: 3500 });
+  driver.manage().window().setRect({ width: 1200, height: 1200 });
 });
 
 test('www.yahoo.co.jp', async () => {

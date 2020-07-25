@@ -13,7 +13,7 @@ beforeAll(() => {
     .setChromeService(new chrome.ServiceBuilder('./drivers/windows/chromedriver.exe'))
     .setChromeOptions(options)
     .build();
-  driver.manage().window().setRect({ width: 375, height: 35000 });
+  driver.manage().window().setRect({ width: 1200, height: 1200 });
 });
 
 test('www.yahoo.co.jp', async () => {
