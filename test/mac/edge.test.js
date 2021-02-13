@@ -1,5 +1,5 @@
 const edge = require("@microsoft/edge-selenium-tools");
-const image = require('../../src/image.js');
+const fs = require('fs');
 
 let driver;
 
@@ -13,9 +13,11 @@ beforeAll(() => {
   driver = edge.Driver.createSession(options, service);
 });
 
-test('www.www.zutto-oreno-turn.com', async () => {
+test('www.zutto-oreno-turn.com', async () => {
   await driver.get('https://www.zutto-oreno-turn.com/');
-  await image.takeScreenshot(driver, 'www.www.zutto-oreno-turn.com', __filename);
+  const base64 = await driver.takeScreenshot();
+  const buffer = Buffer.from(base64, 'base64');
+  fs.writeFileSync('./output/windows_chrome_www.zutto-oreno-turn.com.jpg', buffer);
   expect(1).toBe(1);
 });
 

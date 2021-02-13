@@ -1,9 +1,11 @@
 const { execSync } = require('child_process');
-const image = require('../../src/image.js');
 
 test('www.zutto-oreno-turn.com', async () => {
-  const id = 'www.zutto-oreno-turn.com';
-  const path = image.getEncodedPath(__filename);
-  execSync(`powershell.exe D:\\GitHub.com\\zutto-oreno-turn\\selenium-example\\scripts\\ie.ps1 ${id} ${path}`);
+  const output = './output/ie11_www.zutto-oreno-turn.com.jpg';
+  execSync(`powershell.exe D:\\GitHub.com\\zutto-oreno-turn\\selenium-example\\scripts\\ie_open_capture_save.ps1 ${output}`);
   await expect(1).toBe(1);
+});
+
+afterAll(() => {
+  execSync('powershell.exe Stop-Process -Name iexplore');
 });
