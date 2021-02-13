@@ -19,7 +19,7 @@ $window_process = Get-Process -Name "iexplore" | ? {$_.MainWindowHandle -eq $ie.
 [Microsoft.VisualBasic.Interaction]::AppActivate($window_process.ID) | Out-Null
 
 # open
-$ie.navigate('https://www.yahoo.co.jp/')
+$ie.navigate('https://www.zutto-oreno-turn.com/')
 while($ie.busy) {
   Start-Sleep -milliseconds 1000
 }

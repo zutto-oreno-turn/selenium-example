@@ -15,9 +15,9 @@ beforeAll(() => {
     .build();
 });
 
-test('www.yahoo.co.jp', async () => {
-  await driver.get('https://www.yahoo.co.jp/');
-  await image.takeScreenshot(driver, 'www.yahoo.co.jp', __filename);
+test('www.www.zutto-oreno-turn.com', async () => {
+  await driver.get('https://www.zutto-oreno-turn.com/');
+  await image.takeScreenshot(driver, 'www.www.zutto-oreno-turn.com', __filename);
   expect(1).toBe(1);
 });
 
