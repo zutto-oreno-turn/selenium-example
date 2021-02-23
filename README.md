@@ -1,9 +1,7 @@
-# selenium-example
+# Selenium Example
 
-### 概要
-
-- seleniumを使ったe2eテストのためのサンプルです。
-- テストしたいページをブラウザで開き、画面キャプチャを取得するサンプルになります。
+- Seleniumと、Powershellを使ったブラウザの自動テストのサンプルです。
+- テストしたいページを各種ブラウザで開き、画面キャプチャを取得するサンプルになります。
 
 #### 対応ブラウザ
 
@@ -12,11 +10,11 @@
 | Mac | Chrome | |
 | Mac | Firefox | |
 | Mac | Chromium Edge | |
-| Mac | Safari | ヘッドレスモードが利用できません |
+| Mac | Safari | |
 | Windows | Chrome | |
 | Windows | Firefox | |
 | Windows | Chromium Edge | |
-| Windows | Internet Explorer 11 | WebDriverの動作が不安定ですので、PowerShell+COMを使ってe2eテストします |
+| Windows | Internet Explorer 11 | Powershellを使って自動テストします |
 | Android | Chrome | 実機、レミュレータ共に動作します |
 | iPhone | Safari | 実機、シュミレータ共に動作します。但し、iOS13未満は未対応です |
 
@@ -53,16 +51,9 @@ iOS Safari
    - 取得したudidをテストコードに設定してください。
    - https://github.com/zutto-oreno-turn/selenium-example/blob/master/test/ios/safari.test.js#L10
 
-### テスト実行
+### テスト実行手順
 ```
-1ケースのみテストしたい場合、テストファイル名までのパスを引数として指定して実行する
-$ cd selenium-example
-$ npm test test/mac/chrome.test.js
-
-複数のテストを実行したい場合、ディレクトリを引数として指定して実行する
 $ cd selenium-example
 $ npm test test/mac
 $ npm test test/windows
 ```
-
-Thanks,
