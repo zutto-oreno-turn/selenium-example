@@ -15,9 +15,9 @@
 | Windows | Chrome | |
 | Windows | Firefox | |
 | Windows | Chromium Edge | |
-| Windows | Internet Explorer 11 | Powershellを使って自動テストします |
-| Android | Chrome | 実機、レミュレータ共に動作します |
-| iPhone | Safari | 実機、シュミレータ共に動作します。但し、iOS13未満は未対応です |
+| Windows | Internet Explorer 11 | Powershellを使って自動テストします。 |
+| Android | Chrome | 実機、レミュレータ共に動作します。 |
+| iPhone | Safari | 実機、シュミレータ共に動作します。但し、iOS13未満は未対応です。 |
 
 ### セットアップ
 
