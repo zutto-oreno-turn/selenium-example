@@ -2,6 +2,7 @@
 
 - Seleniumと、Powershellを使ったブラウザの自動テストのサンプルです。
 - テストしたいページを各種ブラウザで開き、画面キャプチャを取得するサンプルになります。
+- テストしたいブラウザのバージョンを確認して、ウエブドライバーをダウンロード&セットアップしてください。
 
 #### 対応ブラウザ
 
@@ -51,9 +52,9 @@ iOS Safari
    - 取得したudidをテストコードに設定してください。
    - https://github.com/zutto-oreno-turn/selenium-example/blob/master/test/ios/safari.test.js#L10
 
-### テスト実行手順
+### テスト実行手順の例
 ```
 $ cd selenium-example
-$ npm test test/mac
-$ npm test test/windows
+$ npm test test/mac/chrome.test.js
+$ npm test test/windows/ie.test.js
 ```
