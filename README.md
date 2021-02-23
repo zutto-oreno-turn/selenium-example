@@ -57,4 +57,6 @@ iOS Safari
 $ cd selenium-example
 $ npm test test/mac/chrome.test.js
 $ npm test test/windows/ie.test.js
+$ npm test test/android/chrome.test.js
+$ npm test test/ios/safari.test.js
 ```
