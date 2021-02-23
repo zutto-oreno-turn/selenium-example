@@ -42,10 +42,11 @@ Microsoft Edge (Chromium Edge)
  - ブラウザのバージョンを確認し、バージョンにあったものをダウンロードして、drivers配下に上書きして置いて下さい。
 
 Safari
- - 開発者オプションを表示して以下設定をして下さい。
+ - ウエブドライバーはOSに内包されていますが以下設定を行って下さい。
  - Menu bar -> Develop -> Allow Remote Automation
 
 iOS Safari
+ - ウエブドライバーはOSに内包されていますが以下設定を行って下さい。
  - Settings -> Advanced -> Remote Automation ON, Web Inspector ON
  - udidはiphoneをmacに接続し、Xcodeで確認できます。
    - https://qiita.com/takashings/items/f4f96d8f948e14cd98d9
